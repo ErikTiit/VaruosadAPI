@@ -1,0 +1,110 @@
+@model PagedList.IPagedList<VaruosadAPI.Models.SparePartsModel>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<meta charset="UTF-8">
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List of spare parts</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by Serial code or by part name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Part Name
+            </th>
+            <th>
+                WareHouse nr 1
+            </th>
+            <th>
+                WareHouse nr 2
+            </th>
+            <th>
+                WareHouse nr 3
+            </th>
+            <th>
+                WareHouse nr 4
+            </th>
+            <th>
+                WareHouse nr 5
+            </th>
+            <th>
+                Serial Code
+            </th>
+            <th>
+                Price Without VAT
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                @Html.ActionLink("Sort by Price High to Low", "Index", new { sortOrder = ViewBag.PriceL, currentFilter = ViewBag.CurrentFilter })
+
+            </th>
+            <th>
+                @Html.ActionLink("Sort by Price Low to High", "Index", new { sortOrder = ViewBag.PriceH, currentFilter = ViewBag.CurrentFilter })
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Warehouse1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Warehouse2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Warehouse3)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Warehouse4)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WareHouse5)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WithoutVAT)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+
+<td class="pager"><a href="?page=@(Model.PageNumber - 1)"> Previous</a></td>
+
+<td class="pager"><a href="?page=@(Model.PageNumber + 1)">Next</a></td>
+
+
+

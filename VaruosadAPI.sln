@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaruosadAPI", "VaruosadAPI\VaruosadAPI.csproj", "{E2FAF34D-4BB1-4525-A779-2E4C456BB421}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C53EAE30-3CAB-4113-81EC-59D8E1BD1D4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2FAF34D-4BB1-4525-A779-2E4C456BB421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FAF34D-4BB1-4525-A779-2E4C456BB421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FAF34D-4BB1-4525-A779-2E4C456BB421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2FAF34D-4BB1-4525-A779-2E4C456BB421}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5E3E1419-E596-4218-BC5E-BE8BB4BA76CA}
+	EndGlobalSection
+EndGlobal
